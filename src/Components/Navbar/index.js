@@ -1,7 +1,7 @@
 import { Switch } from "antd";
 import { NavBarWrapper } from "./StyledComponents";
 
-const NavBar = (props) => {
+const Header = (props) => {
   const { toggleTheme } = props;
   return (
     <NavBarWrapper>
@@ -16,4 +16,4 @@ const NavBar = (props) => {
   );
 };
 
-export default NavBar;
+export default Header;
