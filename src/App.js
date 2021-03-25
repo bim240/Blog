@@ -1,4 +1,4 @@
-import Header from "Components/Navbar";
+import Header from "Components/Header";
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "utils/Styles/GlobalStyles";
