@@ -1,4 +1,5 @@
 import Header from "Components/Header";
+import NavBar from "Components/NavBar";
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "utils/Styles/GlobalStyles";
@@ -15,7 +16,7 @@ function App() {
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
       <Header toggleTheme={toggleTheme} />
-      <div className="App">hello</div>;
+      <NavBar theme={theme} />
     </ThemeProvider>
   );
 }
