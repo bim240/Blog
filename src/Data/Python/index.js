@@ -1,14 +1,14 @@
 import Variable from "./variable.md";
 
-const javaScript = {
-  name: "Javascript",
+const python = {
+  name: "Python",
   articles: [
     {
       id: "variable",
       content: Variable,
-      heading: "Know JavaScript Variable",
+      heading: "Know python Variable",
     },
   ],
 };
 
-export default javaScript;
+export default python;
