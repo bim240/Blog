@@ -1,6 +1,6 @@
-import javaScript from "./JavaSecript";
+import javascript from "./JavaScript";
 import python from "./Python";
 
-const allData = [python, javaScript];
+const allData = [python, javascript];
 
 export default allData;

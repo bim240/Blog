@@ -5,7 +5,7 @@ import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import NavBar from "Components/NavBar";
 
 const Header = (props) => {
-  const { toggleTheme, theme } = props;
+  const { toggleTheme, theme, setSelectedArticle } = props;
 
   const [showNavBar, setShowNavBar] = useState(false);
 
@@ -24,7 +24,13 @@ const Header = (props) => {
         <Switch onChange={toggleTheme} />
       </div>
       <div className="absolute_navbar">
-        {showNavBar && <NavBar theme={theme} className="header_navbar" />}
+        {showNavBar && (
+          <NavBar
+            theme={theme}
+            className="header_navbar"
+            setSelectedArticle={setSelectedArticle}
+          />
+        )}
       </div>
     </HeaderWrapper>
   );

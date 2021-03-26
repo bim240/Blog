@@ -7,6 +7,7 @@ import { lightTheme, darkTheme } from "utils/Styles/Themes";
 
 function App() {
   const [theme, setTheme] = useState("dark");
+  const [selectedArticle, setSelectedArticle] = useState({});
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -15,9 +16,17 @@ function App() {
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <Header toggleTheme={toggleTheme} theme={theme} />
+      <Header
+        toggleTheme={toggleTheme}
+        theme={theme}
+        setSelectedArticle={setSelectedArticle}
+      />
       {/* <NavBar theme={theme} /> */}
-      <ArticleSection theme={theme} />
+      <ArticleSection
+        theme={theme}
+        setSelectedArticle={setSelectedArticle}
+        selectedArticle={selectedArticle}
+      />
     </ThemeProvider>
   );
 }

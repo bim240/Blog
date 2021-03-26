@@ -1,20 +1,28 @@
 import NavBar from "Components/NavBar";
 import { StyledArticleSection, StyledMarkDown } from "./StyledComponents";
-import ReactMarkdown from "react-markdown";
-import javaScript from "Data/JavaSecript";
-import Variable from "Data/JavaSecript/variable.md";
+import allData from "Data";
+import Variable from "Data/JavaScript/variable.md";
 import { useState } from "react";
 import "github-markdown-css";
 
 const ArticleSection = (props) => {
-  const { theme } = props;
+  const { theme, setSelectedArticle, selectedArticle } = props;
   const [mdFile, setMdFile] = useState();
-  fetch(Variable)
+  const getAddress = () => {
+    return allData[selectedArticle.index1]?.articles[selectedArticle.index2]
+      ?.content;
+  };
+  console.log(getAddress());
+  fetch(getAddress())
     .then((res) => res.text())
     .then((res) => setMdFile(res));
   return (
     <StyledArticleSection>
-      <NavBar className="article_navbar" theme={theme} />
+      <NavBar
+        className="article_navbar"
+        setSelectedArticle={setSelectedArticle}
+        theme={theme}
+      />
       <div className="single_article">
         {mdFile && (
           <StyledMarkDown
