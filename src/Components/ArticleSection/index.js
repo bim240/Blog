@@ -5,8 +5,8 @@ const ArticleSection = (props) => {
   const { theme } = props;
   return (
     <StyledArticleSection>
-      <NavBar theme={theme} />
-      <div></div>
+      <NavBar className="article_navbar" theme={theme} />
+      <div className="single_article"> hello</div>
     </StyledArticleSection>
   );
 };

@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const { SubMenu } = Menu;
 const NavBar = (props) => {
-  const { theme } = props;
+  const { theme, className } = props;
   const [selectedKey, setSelectedKey] = useState("sub1");
 
   const handleSelectedKeyChange = () => {
@@ -13,9 +13,9 @@ const NavBar = (props) => {
     <Menu
       theme={theme}
       onClick={handleSelectedKeyChange}
-      style={{ width: 256 }}
       defaultOpenKeys={["sub1"]}
       selectedKeys={selectedKey}
+      className={className}
       mode="inline">
       <SubMenu
         key="sub1"
