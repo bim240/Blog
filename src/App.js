@@ -1,6 +1,5 @@
 import ArticleSection from "Components/ArticleSection";
 import Header from "Components/Header";
-import NavBar from "Components/NavBar";
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "utils/Styles/GlobalStyles";
@@ -16,7 +15,7 @@ function App() {
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <Header toggleTheme={toggleTheme} />
+      <Header toggleTheme={toggleTheme} theme={theme} />
       {/* <NavBar theme={theme} /> */}
       <ArticleSection theme={theme} />
     </ThemeProvider>
