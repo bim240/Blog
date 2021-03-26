@@ -1,3 +1,4 @@
+import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 
 export const StyledArticleSection = styled.section`
@@ -17,6 +18,9 @@ export const StyledArticleSection = styled.section`
   .article_navbar {
     max-width: 325px;
   }
+  .markdown {
+    color: ${(props) => props.theme.text} !important;
+  }
   @media (max-width: 1000px) {
     width: 100%;
     grid-template-columns: 1fr;
@@ -27,4 +31,20 @@ export const StyledArticleSection = styled.section`
       padding: 1rem;
     }
   }
+`;
+
+export const StyledMarkDown = styled(ReactMarkdown)`
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: ${(props) => props.theme.text};
+    font-weight: 500;
+  }
+
+  background: ${(props) => props.theme.articleBackground};
 `;
