@@ -8,9 +8,13 @@ const ArticleSection = (props) => {
   const { theme, setSelectedArticle, selectedArticle } = props;
   const [mdFile, setMdFile] = useState();
   const getAddress = () => {
-    return allData[selectedArticle.index1]?.articles[selectedArticle.index2]
-      ?.content;
+    if (selectedArticle.index1) {
+      return allData[selectedArticle.index1]?.articles[selectedArticle.index2]
+        ?.content;
+    }
+    return allData[0]?.articles[0]?.content;
   };
+
   fetch(getAddress())
     .then((res) => res.text())
     .then((res) => setMdFile(res));

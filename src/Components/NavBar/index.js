@@ -5,9 +5,11 @@ import allData from "Data";
 const { SubMenu } = Menu;
 const NavBar = (props) => {
   const { theme, className, setSelectedArticle } = props;
-  const [selectedKey, setSelectedKey] = useState("");
+  const [selectedKey, setSelectedKey] = useState(
+    "0@0@" + allData[0]?.articles[0]?.id
+  );
 
-  const handleSelectedKeyChange = ({ item, key }) => {
+  const handleSelectedKeyChange = ({ key }) => {
     setSelectedKey(key);
     setSelectedArticle({
       index1: key.split("@")[0],
@@ -15,6 +17,7 @@ const NavBar = (props) => {
       id: key.split("@")[2],
     });
   };
+
   return (
     <Menu
       theme={theme}
