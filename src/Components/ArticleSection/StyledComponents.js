@@ -18,8 +18,11 @@ export const StyledArticleSection = styled.section`
   .article_navbar {
     max-width: 325px;
   }
-  .markdown {
+  .markdown_override {
     color: ${(props) => props.theme.text} !important;
+    pre {
+      background: #051529;
+    }
   }
   @media (max-width: 1000px) {
     width: 100%;

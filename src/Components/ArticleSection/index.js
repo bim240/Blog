@@ -17,7 +17,14 @@ const ArticleSection = (props) => {
       <NavBar className="article_navbar" theme={theme} />
       <div className="single_article">
         {mdFile && (
-          <StyledMarkDown className="markdown-body" children={mdFile} />
+          <StyledMarkDown
+            className={
+              theme === "light"
+                ? "markdown-body"
+                : "markdown-body markdown_override"
+            }
+            children={mdFile}
+          />
         )}
       </div>
     </StyledArticleSection>
