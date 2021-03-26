@@ -31,6 +31,7 @@ const Header = (props) => {
           <NavBar
             theme={theme}
             className="header_navbar"
+            setShowNavBar={setShowNavBar}
             setSelectedArticle={setSelectedArticle}
           />
         )}

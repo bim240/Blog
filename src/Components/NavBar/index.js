@@ -4,7 +4,7 @@ import allData from "Data";
 
 const { SubMenu } = Menu;
 const NavBar = (props) => {
-  const { theme, className, setSelectedArticle } = props;
+  const { theme, className, setSelectedArticle, setShowNavBar } = props;
   const [selectedKey, setSelectedKey] = useState(
     "0@0@" + allData[0]?.articles[0]?.id
   );
@@ -16,6 +16,7 @@ const NavBar = (props) => {
       index2: key.split("@")[1],
       id: key.split("@")[2],
     });
+    setShowNavBar && setShowNavBar();
   };
 
   return (
