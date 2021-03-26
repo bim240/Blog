@@ -1,7 +1,6 @@
 import NavBar from "Components/NavBar";
 import { StyledArticleSection, StyledMarkDown } from "./StyledComponents";
 import allData from "Data";
-import Variable from "Data/JavaScript/variable.md";
 import { useState } from "react";
 import "github-markdown-css";
 
@@ -12,7 +11,6 @@ const ArticleSection = (props) => {
     return allData[selectedArticle.index1]?.articles[selectedArticle.index2]
       ?.content;
   };
-  console.log(getAddress());
   fetch(getAddress())
     .then((res) => res.text())
     .then((res) => setMdFile(res));

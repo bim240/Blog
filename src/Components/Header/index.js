@@ -18,7 +18,10 @@ const Header = (props) => {
             onClick={() => setShowNavBar(!showNavBar)}>
             {showNavBar ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
           </Button>
-          <img src="https://cdn2.iconfinder.com/data/icons/flat-education-icons-5/96/Writing-512.png" />
+          <img
+            src="https://cdn2.iconfinder.com/data/icons/flat-education-icons-5/96/Writing-512.png"
+            alt="logo"
+          />
           <h1>My Writings</h1>
         </div>
         <Switch onChange={toggleTheme} />
