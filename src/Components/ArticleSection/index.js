@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import javaScript from "Data/JavaSecript";
 import Variable from "Data/JavaSecript/variable.md";
 import { useState } from "react";
+import "github-markdown-css";
 
 const ArticleSection = (props) => {
   const { theme } = props;
@@ -15,7 +16,9 @@ const ArticleSection = (props) => {
     <StyledArticleSection>
       <NavBar className="article_navbar" theme={theme} />
       <div className="single_article">
-        {mdFile && <StyledMarkDown className="markdown" children={mdFile} />}
+        {mdFile && (
+          <StyledMarkDown className="markdown-body" children={mdFile} />
+        )}
       </div>
     </StyledArticleSection>
   );
