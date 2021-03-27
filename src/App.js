@@ -20,6 +20,7 @@ function App() {
         toggleTheme={toggleTheme}
         theme={theme}
         setSelectedArticle={setSelectedArticle}
+        selectedArticle={selectedArticle}
       />
       {/* <NavBar theme={theme} /> */}
       <ArticleSection

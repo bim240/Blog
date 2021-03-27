@@ -4,9 +4,21 @@ import allData from "Data";
 
 const { SubMenu } = Menu;
 const NavBar = (props) => {
-  const { theme, className, setSelectedArticle, setShowNavBar } = props;
+  const {
+    theme,
+    className,
+    setSelectedArticle,
+    setShowNavBar,
+    selectedArticle,
+  } = props;
   const [selectedKey, setSelectedKey] = useState(
-    "0@0@" + allData[0]?.articles[0]?.id
+    selectedArticle?.index1
+      ? selectedArticle.index1 +
+          "@" +
+          selectedArticle.index2 +
+          "@" +
+          selectedArticle.id
+      : "0@0@" + allData[0]?.articles[0]?.id
   );
 
   const handleSelectedKeyChange = ({ key }) => {
