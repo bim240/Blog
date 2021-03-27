@@ -5,16 +5,19 @@ import { BiWorld } from "react-icons/bi";
 const Footer = (props) => {
   return (
     <StyledFooter>
-      <a target="_blank" href="https://twitter.com/bim240">
+      <a target="_blank" rel="noreferrer" href="https://twitter.com/bim240">
         <FaTwitter className="icon" />
       </a>
-      <a target="_blank" href="https://www.linkedin.com/in/bim240/">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.linkedin.com/in/bim240/">
         <FaLinkedin className="icon" />
       </a>
-      <a target="_blank" href="https://github.com/bim240">
+      <a target="_blank" rel="noreferrer" href="https://github.com/bim240">
         <FaGithub className="icon" />
       </a>
-      <a target="_blank" href="https://www.bimlendu.com/">
+      <a target="_blank" rel="noreferrer" href="https://www.bimlendu.com/">
         <BiWorld className="icon" />
       </a>
     </StyledFooter>
