@@ -26,6 +26,16 @@ const ArticleSection = (props) => {
         theme={theme}
       />
       <div className="single_article">
+        {selectedArticle?.index2 ? (
+          <p>
+            {allData[selectedArticle.index1]?.name +
+              " / " +
+              allData[selectedArticle.index1]?.articles[selectedArticle.index2]
+                ?.heading}
+          </p>
+        ) : (
+          <p> {allData[0]?.name + " / " + allData[0]?.articles[0]?.heading}</p>
+        )}
         {mdFile && (
           <StyledMarkDown
             className={
