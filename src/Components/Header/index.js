@@ -34,7 +34,7 @@ const Header = (props) => {
         </div>
         <Switch onChange={toggleTheme} />
       </div>
-      <div className="absolute_navbar">
+      <div className="absolute_navbar" onClick={(e) => e.stopPropagation()}>
         {showNavBar && (
           <NavBar
             theme={theme}

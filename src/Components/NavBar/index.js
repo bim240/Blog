@@ -32,27 +32,25 @@ const NavBar = (props) => {
   };
 
   return (
-    <div onClick={(e) => e.stopPropagation()}>
-      <Menu
-        theme={theme}
-        onClick={handleSelectedKeyChange}
-        selectedKeys={selectedKey}
-        className={className}
-        mode="inline">
-        {allData?.map((singelLanguage, index1) => (
-          <SubMenu
-            key={`sub${index1 + 1}`}
-            // icon={<MailOutlined />}
-            title={singelLanguage.name}>
-            {singelLanguage?.articles?.map((article, index2) => (
-              <Menu.Item key={index1 + "@" + index2 + "@" + article.id}>
-                {article.heading}
-              </Menu.Item>
-            ))}
-          </SubMenu>
-        ))}
-      </Menu>
-    </div>
+    <Menu
+      theme={theme}
+      onClick={handleSelectedKeyChange}
+      selectedKeys={selectedKey}
+      className={className}
+      mode="inline">
+      {allData?.map((singelLanguage, index1) => (
+        <SubMenu
+          key={`sub${index1 + 1}`}
+          // icon={<MailOutlined />}
+          title={singelLanguage.name}>
+          {singelLanguage?.articles?.map((article, index2) => (
+            <Menu.Item key={index1 + "@" + index2 + "@" + article.id}>
+              {article.heading}
+            </Menu.Item>
+          ))}
+        </SubMenu>
+      ))}
+    </Menu>
   );
 };
 
