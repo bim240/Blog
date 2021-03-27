@@ -1,20 +1,6 @@
 import { Menu } from "antd";
 import { useState } from "react";
-import allData from "Data";
-import { FaPython } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io";
-
-const getIcon = (name) => {
-  switch (name) {
-    case "Python":
-      return <FaPython className="language_icon" />;
-    case "Javascript":
-      return <IoLogoJavascript className="language_icon" />;
-
-    default:
-      break;
-  }
-};
+import allData, { getIcon } from "Data";
 
 const { SubMenu } = Menu;
 

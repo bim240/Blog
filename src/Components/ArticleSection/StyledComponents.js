@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const StyledArticleSection = styled.section`
   width: 90%;
   margin: 1rem auto;
-  margin-bottom: 3rem;
+  padding-bottom: 5rem;
   display: grid;
   grid-template-columns: 1fr 3fr;
   column-gap: 2rem;
@@ -24,6 +24,25 @@ export const StyledArticleSection = styled.section`
     pre {
       background: #051529;
     }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    code,
+    ol,
+    li,
+    ul {
+      line-height: 1.7777777778;
+      letter-spacing: 1.01;
+      color: #a7a7a7;
+    }
+    p,
+    code {
+      font-size: 1.125rem;
+    }
   }
   @media (max-width: 1000px) {
     width: 100%;
@@ -38,17 +57,29 @@ export const StyledArticleSection = styled.section`
 `;
 
 export const StyledMarkDown = styled(ReactMarkdown)`
+  // max-width: 800px;
+  // margin: auto;
+
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  background: ${(props) => props.theme.articleBackground};
+  color: ${(props) => props.theme.text};
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6 {
-    margin-top: 0;
-    margin-bottom: 0.5em;
+  h6,
+  p,
+  code,
+  ol,
+  li,
+  ul {
     color: ${(props) => props.theme.text};
-    font-weight: 500;
+    line-height: 1.7777777778;
+    letter-spacing: 1.01;
   }
-
-  background: ${(props) => props.theme.articleBackground};
+  p,
+  code {
+    font-size: 1.125rem;
+  }
 `;
