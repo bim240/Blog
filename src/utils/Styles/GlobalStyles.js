@@ -7,9 +7,15 @@ export const GlobalStyles = createGlobalStyle`
    transition: all 0.50s linear;
    
   }
+  
 
 *, *:before, *:after {
   box-sizing: border-box;
+}
+
+.language_icon {
+  margin-right:.7rem;
+  vertical-align:middle;
 }
  
   `;
