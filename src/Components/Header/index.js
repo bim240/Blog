@@ -8,6 +8,11 @@ const Header = (props) => {
   const { toggleTheme, theme, setSelectedArticle, selectedArticle } = props;
 
   const [showNavBar, setShowNavBar] = useState(false);
+  document.addEventListener("click", function (e) {
+    if (showNavBar) {
+      setShowNavBar(false);
+    }
+  });
 
   return (
     <HeaderWrapper>
@@ -15,7 +20,10 @@ const Header = (props) => {
         <div className="logo_title">
           <Button
             className="toggle_btn"
-            onClick={() => setShowNavBar(!showNavBar)}>
+            onClick={(e) => {
+              setShowNavBar(!showNavBar);
+              e.stopPropagation();
+            }}>
             {showNavBar ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
           </Button>
           <img
