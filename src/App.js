@@ -1,4 +1,5 @@
 import ArticleSection from "Components/ArticleSection";
+import Footer from "Components/Footer";
 import Header from "Components/Header";
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
@@ -28,6 +29,7 @@ function App() {
         setSelectedArticle={setSelectedArticle}
         selectedArticle={selectedArticle}
       />
+      <Footer />
     </ThemeProvider>
   );
 }
