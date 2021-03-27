@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const StyledArticleSection = styled.section`
   width: 90%;
   margin: 1rem auto;
+  margin-bottom: 3rem;
   display: grid;
   grid-template-columns: 1fr 3fr;
   column-gap: 2rem;
