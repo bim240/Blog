@@ -39,8 +39,7 @@ export const StyledArticleSection = styled.section`
       letter-spacing: 1.01;
       color: #a7a7a7;
     }
-    p,
-    code {
+    p {
       font-size: 1.125rem;
     }
   }
@@ -81,5 +80,12 @@ export const StyledMarkDown = styled(ReactMarkdown)`
   p,
   code {
     font-size: 1.125rem;
+  }
+
+  @media (max-width: 600px) {
+    pre {
+      width: 250px;
+      margin: 0 auto;
+    }
   }
 `;
