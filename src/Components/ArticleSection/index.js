@@ -2,6 +2,7 @@ import NavBar from "Components/NavBar";
 import { StyledArticleSection, StyledMarkDown } from "./StyledComponents";
 import allData from "Data";
 import { useState } from "react";
+import gfm from "remark-gfm";
 import "github-markdown-css";
 
 const ArticleSection = (props) => {
@@ -38,6 +39,7 @@ const ArticleSection = (props) => {
         )}
         {mdFile && (
           <StyledMarkDown
+            plugins={[gfm]}
             className={
               theme === "light"
                 ? "markdown-body"

@@ -17,10 +17,23 @@ export const StyledArticleSection = styled.section`
     width: 100%;
   }
   .article_navbar {
+    position: sticky;
+    top: 5rem;
     max-width: 325px;
   }
   .markdown_override {
-    color: ${(props) => props.theme.text} !important;
+    color: ${(props) => props.theme.secondaryText} !important;
+    table {
+      tr {
+        background: ${(props) => props.theme.secondaryBackground};
+      }
+    }
+    table tr:nth-child(2n) {
+      background: #04101f;
+    }
+    code {
+      background: ${(props) => props.theme.secondaryBackground};
+    }
     pre {
       background: #051529;
     }
@@ -41,6 +54,12 @@ export const StyledArticleSection = styled.section`
     }
     p {
       font-size: 1.125rem;
+    }
+    @media (max-width: 800px) {
+      p,
+      li {
+        font-size: 16px;
+      }
     }
   }
   @media (max-width: 1000px) {
@@ -77,15 +96,48 @@ export const StyledMarkDown = styled(ReactMarkdown)`
     line-height: 1.7777777778;
     letter-spacing: 1.01;
   }
-  p,
-  code {
+
+  p {
     font-size: 1.125rem;
+  }
+  @media (max-width: 800px) {
+    p,
+    li {
+      font-size: 16px;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+    }
   }
 
   @media (max-width: 600px) {
     pre {
-      width: 250px;
+      width: 300px;
       margin: 0 auto;
+      margin-bottom: 1rem;
+    }
+  }
+  @media (max-width: 450px) {
+    table {
+      width: 370px;
+    }
+  }
+  @media (max-width: 399px) {
+    table {
+      width: 350px;
+    }
+  }
+  @media (max-width: 349px) {
+    table {
+      width: 300px;
+    }
+  }
+  @media (max-width: 299px) {
+    table {
+      width: 250px;
     }
   }
 `;
