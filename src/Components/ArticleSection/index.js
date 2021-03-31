@@ -20,7 +20,6 @@ const ArticleSection = (props) => {
         ?.content;
     } else if (currentLocation && currentLocation.split("@").length >= 2) {
       let location = currentLocation.split("@");
-      console.log(location[0].split("/")[1]);
       return allData[location[0].split("/")[1]]?.articles[location[1]]?.content;
     }
     return allData[0]?.articles[0]?.content;
