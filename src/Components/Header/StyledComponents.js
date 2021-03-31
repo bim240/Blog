@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.section`
+  position: sticky;
+  top: 0;
   width: 100%;
   height: 4rem;
   background: ${(props) => props.theme.secondaryBackground};
