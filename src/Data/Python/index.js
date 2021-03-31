@@ -1,4 +1,4 @@
-import Variable from "./variable.md";
+// import Variable from "./variable.md";
 import KeywordsAndVariable from "./keywordsAndIdentifier.md";
 
 const python = {
