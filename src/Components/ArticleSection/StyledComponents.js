@@ -17,6 +17,8 @@ export const StyledArticleSection = styled.section`
     width: 100%;
   }
   .article_navbar {
+    position: sticky;
+    top: 5rem;
     max-width: 325px;
   }
   .markdown_override {

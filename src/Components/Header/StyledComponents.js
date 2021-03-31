@@ -45,7 +45,7 @@ export const HeaderWrapper = styled.section`
     display: none;
   }
   .absolute_navbar {
-    position: absolute;
+    position: sticky;
     top: 4rem;
     left: 0;
   }
