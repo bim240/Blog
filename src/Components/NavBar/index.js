@@ -1,6 +1,7 @@
 import { Menu } from "antd";
 import { useState } from "react";
 import allData, { getIcon } from "Data";
+import { withRouter } from "react-router-dom";
 
 const { SubMenu } = Menu;
 
@@ -12,6 +13,8 @@ const NavBar = (props) => {
     setShowNavBar,
     selectedArticle,
   } = props;
+  const currentLocation =
+    props.location.pathname !== "/" ? props.location.pathname : false;
   const [selectedKey, setSelectedKey] = useState(
     selectedArticle?.index1
       ? selectedArticle.index1 +
@@ -19,6 +22,8 @@ const NavBar = (props) => {
           selectedArticle.index2 +
           "@" +
           selectedArticle.id
+      : currentLocation
+      ? currentLocation.split("/").join("")
       : "0@0@" + allData[0]?.articles[0]?.id
   );
 
@@ -30,6 +35,8 @@ const NavBar = (props) => {
       id: key.split("@")[2],
     });
     setShowNavBar && setShowNavBar();
+    // return <Redirect to={`/${key}`} />;
+    props.history.push(`/${key}`);
   };
 
   return (
@@ -55,4 +62,4 @@ const NavBar = (props) => {
   );
 };
 
-export default NavBar;
+export default withRouter(NavBar);
