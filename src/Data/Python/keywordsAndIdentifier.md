@@ -1,4 +1,4 @@
-# KeyWords and Identifiers
+# Keywords and Identifiers
 
 ## Keywords
 
@@ -7,7 +7,7 @@ Just like any other language out there, Python also has few reserved words which
 **Pointers on Keywords**
 
 - Keywords can't be used as a variable name, function name, or name of other entities.
-- Keywords are case sensitive.
+- Keywords are case sensitive ( as python is also case sensitive).
 - All the Keywords starts with small letter except for ` True, False, and None`.
 
 As of Python 3.8, there are 35 Keywords.

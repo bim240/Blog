@@ -27,6 +27,11 @@ export const HeaderWrapper = styled.section`
       font-size: 2rem;
       font-weight: 900;
     }
+    @media (max-width: 800px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
   }
   .toggle_btn {
     margin-right: 1rem;

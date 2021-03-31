@@ -50,7 +50,11 @@ export const StyledArticleSection = styled.section`
     p {
       font-size: 1.125rem;
     }
-    code {
+    @media (max-width: 800px) {
+      p,
+      li {
+        font-size: 16px;
+      }
     }
   }
   @media (max-width: 1000px) {
@@ -89,6 +93,18 @@ export const StyledMarkDown = styled(ReactMarkdown)`
   }
   p {
     font-size: 1.125rem;
+  }
+  @media (max-width: 800px) {
+    p,
+    li {
+      font-size: 16px;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+    }
   }
 
   @media (max-width: 600px) {
