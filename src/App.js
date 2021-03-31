@@ -2,7 +2,7 @@ import ArticleSection from "Components/ArticleSection";
 import Footer from "Components/Footer";
 import Header from "Components/Header";
 import { useState } from "react";
-import { Route } from "react-router";
+import { Route, Switch } from "react-router";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "utils/Styles/GlobalStyles";
 import { lightTheme, darkTheme } from "utils/Styles/Themes";
@@ -25,13 +25,15 @@ function App() {
         selectedArticle={selectedArticle}
       />
       {/* <NavBar theme={theme} /> */}
-      <Route path="*">
-        <ArticleSection
-          theme={theme}
-          setSelectedArticle={setSelectedArticle}
-          selectedArticle={selectedArticle}
-        />
-      </Route>
+      <Switch>
+        <Route path="*">
+          <ArticleSection
+            theme={theme}
+            setSelectedArticle={setSelectedArticle}
+            selectedArticle={selectedArticle}
+          />
+        </Route>
+      </Switch>
       <Footer />
     </ThemeProvider>
   );
