@@ -1,4 +1,4 @@
-import javascript from "./JavaScript";
+// import javascript from "./JavaScript";
 import python from "./Python";
 import HtmlCss from "./HtmlCss";
 import { FaPython } from "react-icons/fa";
