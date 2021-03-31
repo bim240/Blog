@@ -4,14 +4,24 @@ import allData from "Data";
 import { useState } from "react";
 import gfm from "remark-gfm";
 import "github-markdown-css";
+import { withRouter } from "react-router";
 
 const ArticleSection = (props) => {
   const { theme, setSelectedArticle, selectedArticle } = props;
+
+  const currentLocation =
+    props.location.pathname !== "/" ? props.location.pathname : false;
+
   const [mdFile, setMdFile] = useState();
+
   const getAddress = () => {
     if (selectedArticle.index1) {
       return allData[selectedArticle.index1]?.articles[selectedArticle.index2]
         ?.content;
+    } else if (currentLocation && currentLocation.split("@").length >= 2) {
+      let location = currentLocation.split("@");
+      console.log(location[0].split("/")[1]);
+      return allData[location[0].split("/")[1]]?.articles[location[1]]?.content;
     }
     return allData[0]?.articles[0]?.content;
   };
@@ -53,4 +63,4 @@ const ArticleSection = (props) => {
   );
 };
 
-export default ArticleSection;
+export default withRouter(ArticleSection);
