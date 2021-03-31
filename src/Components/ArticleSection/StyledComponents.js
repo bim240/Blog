@@ -125,19 +125,19 @@ export const StyledMarkDown = styled(ReactMarkdown)`
       width: 370px;
     }
   }
-  @media (max-width: 399px) {
+  @media (max-width: 399.99px) {
     table {
-      width: 350px;
+      width: 310px;
     }
   }
-  @media (max-width: 349px) {
+  @media (max-width: 349.99px) {
     table {
-      width: 300px;
+      width: 270px;
     }
   }
   @media (max-width: 299px) {
     table {
-      width: 250px;
+      width: 230px;
     }
   }
 `;
