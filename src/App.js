@@ -25,7 +25,7 @@ function App() {
         selectedArticle={selectedArticle}
       />
       {/* <NavBar theme={theme} /> */}
-      <Route>
+      <Route path="*">
         <ArticleSection
           theme={theme}
           setSelectedArticle={setSelectedArticle}
