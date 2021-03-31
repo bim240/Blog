@@ -34,7 +34,7 @@ It's a name that can be used to differentiate between different entities such as
 
 - @, $, #, !, ., and % are not allowed in Identifiers name.
 - Identifiers' names can't start with a digit. However, one or more digits can be used later in the Identifier's name.
-- Identifiers can't be Keywords.
+- Keywords can't be Identifiers.
 - There is no limit to how long an Identifier's name can be (the only limit is your pc).
 - It can contain a-z, A-Z, 0-9, and \_ ( underscore ) but as discussed earlier it can't start with digits.
 
