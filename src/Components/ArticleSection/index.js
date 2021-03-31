@@ -11,6 +11,7 @@ const ArticleSection = (props) => {
 
   const currentLocation =
     props.location.pathname !== "/" ? props.location.pathname : false;
+  let location = currentLocation.split("@");
 
   const [mdFile, setMdFile] = useState();
 
@@ -43,6 +44,10 @@ const ArticleSection = (props) => {
               allData[selectedArticle.index1]?.articles[selectedArticle.index2]
                 ?.heading}
           </p>
+        ) : currentLocation ? (
+          allData[location[0].split("/")[1]]?.name +
+          " / " +
+          allData[location[0].split("/")[1]]?.articles[location[1]]?.heading
         ) : (
           <p> {allData[0]?.name + " / " + allData[0]?.articles[0]?.heading}</p>
         )}
