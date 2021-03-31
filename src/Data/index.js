@@ -18,6 +18,6 @@ export const getIcon = (name) => {
   }
 };
 
-const allData = [python, javascript, HtmlCss];
+const allData = [python, HtmlCss];
 
 export default allData;

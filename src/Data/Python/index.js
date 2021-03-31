@@ -9,11 +9,11 @@ const python = {
       content: KeywordsAndVariable,
       heading: "Keywords and Identifier",
     },
-    {
-      id: "variable",
-      content: Variable,
-      heading: "Know python Variable",
-    },
+    // {
+    //   id: "variable",
+    //   content: Variable,
+    //   heading: "Know python Variable",
+    // },
   ],
 };
 
