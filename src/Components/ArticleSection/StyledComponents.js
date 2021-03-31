@@ -96,6 +96,7 @@ export const StyledMarkDown = styled(ReactMarkdown)`
     line-height: 1.7777777778;
     letter-spacing: 1.01;
   }
+
   p {
     font-size: 1.125rem;
   }
@@ -114,8 +115,9 @@ export const StyledMarkDown = styled(ReactMarkdown)`
 
   @media (max-width: 600px) {
     pre {
-      width: 250px;
+      width: 300px;
       margin: 0 auto;
+      margin-bottom: 1rem;
     }
   }
   @media (max-width: 450px) {
