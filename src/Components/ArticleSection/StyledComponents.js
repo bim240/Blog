@@ -26,6 +26,9 @@ export const StyledArticleSection = styled.section`
         background: ${(props) => props.theme.secondaryBackground};
       }
     }
+    table tr:nth-child(2n) {
+      background: #04101f;
+    }
     code {
       background: ${(props) => props.theme.secondaryBackground};
     }
