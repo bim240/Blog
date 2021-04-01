@@ -11,7 +11,7 @@ const ArticleSection = (props) => {
 
   const currentLocation =
     props.location.pathname !== "/" ? props.location.pathname : false;
-  let location = currentLocation.split("@");
+  let location = currentLocation && currentLocation.split("@");
 
   const [mdFile, setMdFile] = useState();
 
