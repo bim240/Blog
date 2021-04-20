@@ -2,10 +2,16 @@
 import KeywordsAndVariable from "./keywordsAndIdentifier.md";
 import DataType from "./dataType.md";
 import Function1 from "./function.md";
+import stringMethod from "./stringMethod.md";
 
 const python = {
   name: "Python",
   articles: [
+    {
+      id: "stringmethod",
+      content: stringMethod,
+      heading: "String Method",
+    },
     {
       id: "function",
       content: Function1,
