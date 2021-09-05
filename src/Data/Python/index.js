@@ -23,7 +23,7 @@ const python = {
       heading: 'Data Types',
     },
     {
-      id: 'keywords_and _identifier_in_python',
+      id: 'keywords_and_identifier_in_python',
       content: KeywordsAndVariable,
       heading: 'Keywords and Identifier',
     },
