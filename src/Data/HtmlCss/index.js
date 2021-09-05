@@ -1,12 +1,12 @@
-import Intro from "./Introduction.md";
+import Intro from './Introduction.md';
 
 const HtmlCss = {
-  name: "HTML & CSS",
+  name: 'HTML & CSS',
   articles: [
     {
-      id: "intro",
+      id: 'introduction_to_html_css',
       content: Intro,
-      heading: "Introduction to HTML and CSS",
+      heading: 'Introduction to HTML and CSS',
     },
   ],
 };
