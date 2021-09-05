@@ -1,64 +1,47 @@
-import NavBar from "Components/NavBar";
-import { StyledArticleSection, StyledMarkDown } from "./StyledComponents";
-import allData from "Data";
-import { useState } from "react";
-import gfm from "remark-gfm";
-import "github-markdown-css";
-import { withRouter } from "react-router";
+import NavBar from 'Components/NavBar';
+import { StyledArticleSection, StyledMarkDown } from './StyledComponents';
+import allData from 'Data';
+import { useState } from 'react';
+import gfm from 'remark-gfm';
+import 'github-markdown-css';
+import { withRouter } from 'react-router';
+import { getArticleSection } from 'utils/getArticleSection';
 
 const ArticleSection = (props) => {
-  const { theme, setSelectedArticle, selectedArticle } = props;
+  const { theme, setSelectedArticleId, selectedArticleId } = props;
 
-  const currentLocation =
-    props.location.pathname !== "/" ? props.location.pathname : false;
-  let location = currentLocation && currentLocation.split("@");
+  const currentLocation = props.location.pathname !== '/' ? props.location.pathname : false;
+  let location = currentLocation && currentLocation.split('@');
+  const articleSection = getArticleSection(selectedArticleId || location);
 
   const [mdFile, setMdFile] = useState();
 
   const getAddress = () => {
-    if (selectedArticle.index1) {
-      return allData[selectedArticle.index1]?.articles[selectedArticle.index2]
-        ?.content;
-    } else if (currentLocation && currentLocation.split("@").length >= 2) {
-      let location = currentLocation.split("@");
-      return allData[location[0].split("/")[1]]?.articles[location[1]]?.content;
+    if (articleSection) {
+      return allData[articleSection.toLocaleLowerCase()]?.articles?.find(
+        (article) => article.id === selectedArticleId,
+      )?.content;
     }
-    return allData[0]?.articles[0]?.content;
+    return allData.python?.articles[0]?.content;
   };
 
   fetch(getAddress())
     .then((res) => res.text())
     .then((res) => setMdFile(res));
+
   return (
     <StyledArticleSection>
       <NavBar
-        className="article_navbar"
-        setSelectedArticle={setSelectedArticle}
+        className='article_navbar'
+        setSelectedArticleId={setSelectedArticleId}
         theme={theme}
       />
-      <div className="single_article">
-        {selectedArticle?.index2 ? (
-          <p>
-            {allData[selectedArticle.index1]?.name +
-              " / " +
-              allData[selectedArticle.index1]?.articles[selectedArticle.index2]
-                ?.heading}
-          </p>
-        ) : currentLocation ? (
-          allData[location[0].split("/")[1]]?.name +
-          " / " +
-          allData[location[0].split("/")[1]]?.articles[location[1]]?.heading
-        ) : (
-          <p> {allData[0]?.name + " / " + allData[0]?.articles[0]?.heading}</p>
-        )}
+      <div className='single_article'>
+        <p>{articleSection}</p>
         {mdFile && (
           <StyledMarkDown
             plugins={[gfm]}
-            className={
-              theme === "light"
-                ? "markdown-body"
-                : "markdown-body markdown_override"
-            }
+            className={theme === 'light' ? 'markdown-body' : 'markdown-body markdown_override'}
             children={mdFile}
           />
         )}

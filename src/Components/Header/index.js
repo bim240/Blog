@@ -1,14 +1,14 @@
-import { Button, Switch } from "antd";
-import { useState } from "react";
-import { HeaderWrapper } from "./StyledComponents";
-import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
-import NavBar from "Components/NavBar";
+import { Button, Switch } from 'antd';
+import { useState } from 'react';
+import { HeaderWrapper } from './StyledComponents';
+import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+import NavBar from 'Components/NavBar';
 
 const Header = (props) => {
-  const { toggleTheme, theme, setSelectedArticle, selectedArticle } = props;
+  const { toggleTheme, theme, setSelectedArticleId, selectedArticleId } = props;
 
   const [showNavBar, setShowNavBar] = useState(false);
-  document.addEventListener("click", function (e) {
+  document.addEventListener('click', function (e) {
     if (showNavBar) {
       setShowNavBar(false);
     }
@@ -16,10 +16,10 @@ const Header = (props) => {
 
   return (
     <HeaderWrapper>
-      <div className="container">
-        <div className="logo_title">
+      <div className='container'>
+        <div className='logo_title'>
           <Button
-            className="toggle_btn"
+            className='toggle_btn'
             onClick={(e) => {
               setShowNavBar(!showNavBar);
               e.stopPropagation();
@@ -27,21 +27,21 @@ const Header = (props) => {
             {showNavBar ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
           </Button>
           <img
-            src="https://cdn2.iconfinder.com/data/icons/flat-education-icons-5/96/Writing-512.png"
-            alt="logo"
+            src='https://cdn2.iconfinder.com/data/icons/flat-education-icons-5/96/Writing-512.png'
+            alt='logo'
           />
           <h1>My Writings</h1>
         </div>
         <Switch onChange={toggleTheme} />
       </div>
-      <div className="absolute_navbar" onClick={(e) => e.stopPropagation()}>
+      <div className='absolute_navbar' onClick={(e) => e.stopPropagation()}>
         {showNavBar && (
           <NavBar
             theme={theme}
-            className="header_navbar"
+            className='header_navbar'
             setShowNavBar={setShowNavBar}
-            setSelectedArticle={setSelectedArticle}
-            selectedArticle={selectedArticle}
+            setSelectedArticleId={setSelectedArticleId}
+            selectedArticleId={selectedArticleId}
           />
         )}
       </div>
