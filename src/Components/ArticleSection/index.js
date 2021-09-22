@@ -22,7 +22,7 @@ const ArticleSection = (props) => {
         (article) => article.id === selectedArticleId,
       )?.content;
     }
-    return allData.python?.articles[0]?.content;
+    return allData.react?.articles[0]?.content;
   };
 
   fetch(getAddress())
