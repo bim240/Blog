@@ -5,6 +5,8 @@ export function getArticleSection(articleId) {
         return 'Python';
       case articleId.includes('html') || articleId.includes('css'):
         return 'htmlcss';
+      case articleId.includes('react'):
+        return 'React';
       default:
         break;
     }
